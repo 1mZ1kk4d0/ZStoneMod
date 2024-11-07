@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "zstone:block/purple_stone_ore"
+    "all": "zstone:block/purple_ore"
   }
 }

@@ -20,10 +20,8 @@ public class BlocksMod {
 
     public static Block register(String path, Function<AbstractBlock.Settings, Block> factory, AbstractBlock.Settings settings ) {
 
-
         Identifier id = Identifier.of(ZStone.MOD_ID, path);
         RegistryKey<Block> key = RegistryKey.of(RegistryKeys.BLOCK, id);
-
 
         Block block = Blocks.register(key, factory, settings);
 
