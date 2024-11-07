@@ -4,6 +4,7 @@ import com.zikkado.ZStone;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
@@ -18,6 +19,7 @@ public class BlocksMod {
 
     public static final Block PURPLE_ORE = register("purple_ore", Block::new, AbstractBlock.Settings.create().strength(4.0f));
 
+
     public static Block register(String path, Function<AbstractBlock.Settings, Block> factory, AbstractBlock.Settings settings ) {
 
         Identifier id = Identifier.of(ZStone.MOD_ID, path);
@@ -25,11 +27,13 @@ public class BlocksMod {
 
         Block block = Blocks.register(key, factory, settings);
 
-        return Registry.register(Registries.BLOCK, key, new Block(settings));
+        Items.register(block);
+
+        return block;
     }
 
     public static void initialize() {
 
-        ZStone.LOGGER.info("Registrando Blocos");
+        ZStone.LOGGER.info("Registrando Blocos...");
     }
 }
